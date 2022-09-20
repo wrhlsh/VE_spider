@@ -4,7 +4,7 @@ import requests
 
 
 def get_one(data):
-    res = requests.post(url="http://192.168.105.121:8888/article/tag_channel/", data=data)
+    res = requests.post(url="http://192.168.0.1:8888/article/tag_channel/", data=data)
     print(res.json)
 
 
@@ -20,7 +20,7 @@ def get_one(data):
 
 
 def get_all_data(data):
-    res = requests.post(url='http://192.168.105.121:8888/docking/origin_data/', data=data)
+    res = requests.post(url='http://192.168.0.1:8888/docking/origin_data/', data=data)
     print(res.json)
 
 
@@ -35,7 +35,7 @@ def get_all_data(data):
 
 
 def get_tags(data):
-    res = requests.post(url='http://192.168.105.121:8888/docking/tag_model/', data=data)
+    res = requests.post(url='http://192.168.0.0:8888/docking/tag_model/', data=data)
     print(res.json)
 
 
@@ -48,13 +48,13 @@ def get_tags(data):
 
 
 def get_connection_tags(data):
-    res = requests.post(url='http://192.168.105.121:8000/article/tag_channel/', data=data)
+    res = requests.post(url='http://192.168.0.0:8000/article/tag_channel/', data=data)
     print(res.json)
 
 
 '''
 {
-	"source": "微步、VE、奇安信、IBM、绿盟",
+    "source": "微步、VE、奇安信、IBM、绿盟",
     "tag_name": "木马",
     "channel":"domin",
     "content": "123.12.54.22",
