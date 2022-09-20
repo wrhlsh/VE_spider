@@ -5,7 +5,7 @@ import MySQLdb
 
 
 def get_domain_data():
-    conn = MySQLdb.Connect(host='localhost', user='root', password='wrh19940',
+    conn = MySQLdb.Connect(host='localhost', user='root', password='******',
                            db='db', port=3306, charset='utf8')
     cursor = conn.cursor()
     cursor.execute('select count(*) from domain_ioc where status_v=0')
@@ -24,7 +24,7 @@ def get_domain_data():
 
 
 def get_ip_data():
-    conn = MySQLdb.Connect(host='localhost', user='root', password='wrh19940',
+    conn = MySQLdb.Connect(host='localhost', user='root', password='*******',
                            db='db', port=3306, charset='utf8')
     cursor = conn.cursor()
     cursor.execute('select count(*) from ip_ioc where status_v=0')
@@ -43,7 +43,7 @@ def get_ip_data():
 
 
 def saveInDB(url):
-    conn = MySQLdb.Connect(host='localhost', user='root', password='wrh19940',
+    conn = MySQLdb.Connect(host='localhost', user='root', password='*******',
                            db='crawler', port=3306, charset='utf8')
     cursor = conn.cursor()
     cursor.execute('insert into ioc_data values(%s,0)' % url)
@@ -53,7 +53,7 @@ def saveInDB(url):
 # 通过阈值检查数据库是否需要补货
 def checkDB():
     # 从数据库获取一下可用条数
-    conn = MySQLdb.Connect(host='localhost', user='root', password='wrh19940',
+    conn = MySQLdb.Connect(host='localhost', user='root', password='*********',
                            db='crawler', port=3306, charset='utf8')
     cursor = conn.cursor()
     cursor.execute('select count(*) from ioc_data where status=0')
